@@ -1,0 +1,11 @@
+{
+  "name": "react-ts-clean-architecture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/arthurgehrke/react-ts-clean-architecture.git",
+  "author": "arthurgehrke <arthurgehrke07@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "git-commit-msg-linter": "^2.4.4"
+  }
+}
