@@ -1,5 +1,7 @@
 import { RemoteAuthentication } from './remoteAuthentication'
 import { HttpPostClientSpy } from '../../test/mockHttpClient'
+import { mockAuthentication } from '../../../domain/test/mockAuthentication'
+
 import faker from 'faker'
 
 type SutTypes = {
@@ -21,8 +23,16 @@ describe('RemoteAuthentication', () => {
   test('Should call httpClient with correct URL', async () => {
     const url = faker.internet.url()
     const { sut, httpPostClientSpy } = makeSut(url)
-    await sut.auth()
+    await sut.auth(mockAuthentication())
 
     expect(httpPostClientSpy.url).toBe(url)
+  })
+
+  test('Should call httpClient with correct body', async () => {
+    const { sut, httpPostClientSpy } = makeSut()
+    const authenticationParams = mockAuthentication()
+    await sut.auth(authenticationParams)
+
+    expect(httpPostClientSpy.body).toEqual(authenticationParams)
   })
 })
