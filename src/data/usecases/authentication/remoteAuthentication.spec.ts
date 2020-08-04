@@ -1,6 +1,6 @@
 import { RemoteAuthentication } from './remoteAuthentication'
-import { HttpPostClientSpy } from '../../test/mockHttpClient'
-import { mockAuthentication } from '../../../domain/test/mockAuthentication'
+import { HttpPostClientSpy } from '@/data/test/mockHttpClient'
+import { mockAuthentication } from '@/domain/test/mockAuthentication'
 
 import faker from 'faker'
 
